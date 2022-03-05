@@ -10,11 +10,16 @@
         android:id="@+id/Home_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/blooddrive" />
+
+    <TextView
+        android:id="@+id/home_desciption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/blooddrive" />
+        app:layout_constraintTop_toBottomOf="@+id/Home_image" />
 
     <Button
         android:id="@+id/button"
@@ -26,14 +31,5 @@
         android:text="@string/proceed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/home_desciption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Home_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

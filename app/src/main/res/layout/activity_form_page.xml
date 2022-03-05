@@ -7,10 +7,292 @@
     tools:context=".FormPage">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/form_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hi"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="58dp" />
+        android:layout_marginTop="8dp"
+        android:text="@string/blood_donation_form"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/formname_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/donor_s_name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/form_title" />
+
+    <EditText
+        android:id="@+id/formname_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/enter_your_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/formname_label"
+        app:layout_constraintStart_toEndOf="@+id/formname_label" />
+
+    <TextView
+        android:id="@+id/formemail_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/email"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formgender_label" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintStart_toEndOf="@+id/formgender_label"
+        app:layout_constraintTop_toBottomOf="@+id/formname_text">
+
+        <RadioButton
+            android:id="@+id/formrbMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:onClick="genderClicked"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:id="@+id/formrbFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:onClick="genderClicked"
+            android:text="@string/female" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/formgender_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/gender"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formname_label" />
+
+    <EditText
+        android:id="@+id/formemail_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:ems="10"
+        android:hint="@string/enter_your_email_address"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBaseline_toBaselineOf="@+id/formemail_label"
+        app:layout_constraintStart_toEndOf="@+id/formemail_label" />
+
+    <TextView
+        android:id="@+id/formphone_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/phone"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formemail_label" />
+
+    <EditText
+        android:id="@+id/formphone_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:ems="10"
+        android:hint="@string/enter_phone_number"
+        android:inputType="phone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/formphone_label"
+        app:layout_constraintStart_toEndOf="@+id/formphone_label" />
+
+    <TextView
+        android:id="@+id/formic_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/ic_number"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formphone_label" />
+
+    <EditText
+        android:id="@+id/formic_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:hint="@string/enter_ic_number"
+        android:inputType="number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/formic_label"
+        app:layout_constraintStart_toEndOf="@+id/formic_label" />
+
+    <TextView
+        android:id="@+id/formaddress_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/address"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formic_label" />
+
+    <EditText
+        android:id="@+id/formaddress_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/enter_address"
+        android:inputType="textMultiLine"
+        app:layout_constraintBaseline_toBaselineOf="@+id/formaddress_label"
+        app:layout_constraintStart_toEndOf="@+id/formaddress_label" />
+
+    <TextView
+        android:id="@+id/formoccupation_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/select_occupation"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formaddress_text" />
+
+    <TextView
+        android:id="@+id/formbloodType_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/select_donor_s_blood_type"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/formoccupation_label"
+        app:layout_constraintTop_toBottomOf="@+id/formaddress_text" />
+
+    <Spinner
+        android:id="@+id/formoccupation_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formoccupation_label" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/formoccupation_label"
+        app:layout_constraintTop_toBottomOf="@+id/formbloodType_label">
+
+        <RadioButton
+            android:id="@+id/formrbA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:onClick="bloodTypeClicked"
+            android:text="@string/a" />
+
+        <RadioButton
+            android:id="@+id/formrbB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:onClick="bloodTypeClicked"
+            android:text="@string/b" />
+
+        <RadioButton
+            android:id="@+id/formrbAB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:onClick="bloodTypeClicked"
+            android:text="@string/ab" />
+
+        <RadioButton
+            android:id="@+id/formrbO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="bloodTypeClicked"
+            android:text="@string/o" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/formSubmit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="display"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/formquestion_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/did_you_ever_donate_blood_before"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formoccupation_spinner" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formquestion_label">
+
+        <RadioButton
+            android:id="@+id/formrbYes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="@string/yes"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/formrbNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no"
+            android:textSize="14sp" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
