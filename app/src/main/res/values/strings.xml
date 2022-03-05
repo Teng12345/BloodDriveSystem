@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BloodDriveSystem</string>
+    <string name="home_description">This is a blood donation system. It only takes a few simple steps to book a blood donation. If you want to contribute your valuable blood donation to Malaysia, you can click the button in the lower right corner to continue the blood donation steps.</string>
+    <string name="proceed">Proceed</string>
+</resources>
